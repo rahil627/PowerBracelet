@@ -1,4 +1,4 @@
-#PowerBracelet -  Kha Input Lib extention
+#PowerBracelet -  Simplified Kha Input Lib
 
 A Simple input library to get you quickly started.
 
@@ -21,7 +21,7 @@ Example:
     }
 
 
-Make the update function **powerbracelet.Input.update** is called in your update loop.
+Make sure the update function **powerbracelet.Input.update** is called in your update loop.
 It takes a delta time to process touch input durations.
 
 #
@@ -56,6 +56,7 @@ A keyboard controller :
     public function new(){
        vButton = VirtualInput.getButton("jump");
        if(vButton == null){
+           vButton = new VirtualButton("jump");           
            VirtualInput.addButton(vButton);
        }
     }
@@ -84,6 +85,7 @@ A GamePad controller :
 
        vButton = VirtualInput.getButton("jump");
        if(vButton == null){
+           vButton = new VirtualButton("jump");
            VirtualInput.addButton(vButton);
        }
 
@@ -95,7 +97,7 @@ A GamePad controller :
         //0 = first button
         //Button state is the requested state to check
         var isPressed:Bool  = Input.gamepad.check(0,ButtonState.Pressed)   ;
-        vButton.update(Input.gamepad.isDown(Key.SPACE));
+        vButton.update(isPressed);
     }
 
 In your character controller
@@ -117,6 +119,12 @@ In your character controller
         public function update(){
             if(jumpButton.pressed){
                 //Do jump
+            }
+
+            //Or
+
+            if(VirtualInput.buttonPressed("jump")){
+                //Do Jump
             }
         }
 
