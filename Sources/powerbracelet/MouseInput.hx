@@ -76,6 +76,8 @@ class MouseInput {
 					buttons.set(button,Off);
 			}	
 		}
+		deltaX = 0;
+		deltaY = 0;
 	 }
 
 	 @:allow(powerbracelet.TouchInput)
