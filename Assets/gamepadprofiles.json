@@ -1,0 +1,128 @@
+{
+	"ds4":{
+		"guid":[
+			"vendor: 054c product: 09cc"
+		],
+		"mapping": {
+			"buttons":{
+				"WEST_BUTTON"			: {"■":0},
+				"SOUTH_BUTTON"			: {"X":1},
+				"NORTH_BUTTON"			: {"▲":3},
+				"EAST_BUTTON"			: {"●":2},
+
+				"LB_BUTTON"				: {"L1":6},
+				"RB_BUTTON"				: {"R1":7},
+
+				"LB_2_BUTTON"			: {"L2":4},
+				"RB_2_BUTTON"			: {"R2":5},
+
+				"SELECT_BUTTON"			: {"OPTION":8},
+				"START_BUTTON"			: {"TOUCH_CLICK":9},
+				"LEFT_ANALOGUE_BUTTON"	: {"LEFT_ANALOGUE_BUTTON":10},
+				"RIGHT_ANALOGUE_BUTTON"	: {"RIGHT_ANALOGUE_BUTTON":11},
+
+				"HOME_BUTTON"			: {"PS_BUTTON":12},
+
+				"DPAD_UP"				: {"DPAD_UP":9},
+				"DPAD_DOWN"				: {"DPAD_DOWN":8},
+				"DPAD_LEFT"				: {"DPAD_LEFT":15},
+				"DPAD_RIGHT"			: {"DPAD_RIGHT":15}
+			},
+			"axis":{
+				"LEFT_ANALOGUE_X"		: {"LEFT_ANALOGUE_X":0},
+				"LEFT_ANALOGUE_Y"		: {"LEFT_ANALOGUE_Y":1},
+				"RIGHT_ANALOGUE_X"		: {"RIGHT_ANALOGUE_X":2},
+				"RIGHT_ANALOGUE_Y"		: {"RIGHT_ANALOGUE_Y":5},
+				"LEFT_TRIGGER"			: {"LEFT_TRIGGER":3},
+				"RIGHT_TRIGGER"			: {"RIGHT_TRIGGER":4}
+			}
+		},
+
+		"transform":{
+				"DPAD_UP"    	: {"isAxis":"+"},
+				"DPAD_RIGHT" 	: {"isAxis":"+"},
+				"DPAD_LEFT"    	: {"isAxis":"-"},
+				"DPAD_DOWN" 	: {"isAxis":"-"},
+				"LEFT_TRIGGER" 	: {"range":"1,-1->0,1"}, 
+				"RIGHT_TRIGGER" : {"range":"-1,1->0,1"}
+		}
+	},
+	"xbox":{
+		"guid":[
+			"xbox 360"
+		],
+		"mapping": {
+			"buttons":{
+				"WEST_BUTTON"			: {"X":0} ,
+				"SOUTH_BUTTON"			: {"A":1},
+				"NORTH_BUTTON"			: {"Y":2} ,
+				"EAST_BUTTON"			: {"B":3},
+
+				"LB_BUTTON"				: {"L1":6} ,
+				"RB_BUTTON"				: {"R1":7} ,
+
+				"LB_2_BUTTON"			: {"R2":4} ,
+				"RB_2_BUTTON"			: {"R2":5} ,
+
+				"SELECT_BUTTON"			: {"Back":9} ,
+				"START_BUTTON"			: {"Start":8} ,
+				"LEFT_ANALOGUE_BUTTON"	: {"LEFT_ANALOGUE_BUTTON":10} ,
+				"RIGHT_ANALOGUE_BUTTON"	: {"RIGHT_ANALOGUE_BUTTON":11} ,
+
+				"HOME_BUTTON"			: {"XBOX_HOME":16} ,
+
+				"DPAD_UP"				: {"DPAD_UP":12} ,
+				"DPAD_DOWN"				: {"DPAD_DOWN":13},
+				"DPAD_LEFT"				: {"DPAD_LEFT":14},
+				"DPAD_RIGHT"			: {"DPAD_RIGHT":15}
+			},
+			"axis":{
+				"LEFT_ANALOGUE_X"		: {"LEFT_ANALOGUE_X":0} ,
+				"LEFT_ANALOGUE_Y"		: {"LEFT_ANALOGUE_Y":1} ,
+				"RIGHT_ANALOGUE_X"		: {"RIGHT_ANALOGUE_X":2} ,
+				"RIGHT_ANALOGUE_Y"		: {"RIGHT_ANALOGUE_Y":3} ,
+				"LEFT_TRIGGER"			: {"LEFT_TRIGGER":4} ,
+				"RIGHT_TRIGGER"			: {"RIGHT_TRIGGER":5}
+			}
+		}
+	},
+	"generic":{
+		"guid":[
+			"generic"
+		],
+		"mapping": {
+			"buttons":{
+				"WEST_BUTTON"			: {"X":0} ,
+				"SOUTH_BUTTON"			: {"A":1},
+				"NORTH_BUTTON"			: {"Y":2} ,
+				"EAST_BUTTON"			: {"B":3},
+
+				"LB_BUTTON"				: {"L1":6} ,
+				"RB_BUTTON"				: {"R1":7} ,
+
+				"LB_2_BUTTON"			: {"R2":4} ,
+				"RB_2_BUTTON"			: {"R2":5} ,
+
+				"SELECT_BUTTON"			: {"Back":9} ,
+				"START_BUTTON"			: {"Start":8} ,
+				"LEFT_ANALOGUE_BUTTON"	: {"LEFT_ANALOGUE_BUTTON":10} ,
+				"RIGHT_ANALOGUE_BUTTON"	: {"RIGHT_ANALOGUE_BUTTON":11} ,
+
+				"HOME_BUTTON"			: {"XBOX_HOME":16} ,
+
+				"DPAD_UP"				: {"DPAD_UP":12} ,
+				"DPAD_DOWN"				: {"DPAD_DOWN":13},
+				"DPAD_LEFT"				: {"DPAD_LEFT":14},
+				"DPAD_RIGHT"			: {"DPAD_RIGHT":15}
+			},
+			"axis":{
+				"LEFT_ANALOGUE_X"		: {"LEFT_ANALOGUE_X":0} ,
+				"LEFT_ANALOGUE_Y"		: {"LEFT_ANALOGUE_Y":1} ,
+				"RIGHT_ANALOGUE_X"		: {"RIGHT_ANALOGUE_X":2} ,
+				"RIGHT_ANALOGUE_Y"		: {"RIGHT_ANALOGUE_Y":3} ,
+				"LEFT_TRIGGER"			: {"LEFT_TRIGGER":4} ,
+				"RIGHT_TRIGGER"			: {"RIGHT_TRIGGER":5}
+			}
+		}
+	}
+}
