@@ -36,15 +36,6 @@
 				"LEFT_TRIGGER"			: {"LEFT_TRIGGER":3},
 				"RIGHT_TRIGGER"			: {"RIGHT_TRIGGER":4}
 			}
-		},
-
-		"transform":{
-				"DPAD_UP"    	: {"isAxis":"+"},
-				"DPAD_RIGHT" 	: {"isAxis":"+"},
-				"DPAD_LEFT"    	: {"isAxis":"-"},
-				"DPAD_DOWN" 	: {"isAxis":"-"},
-				"LEFT_TRIGGER" 	: {"range":"1,-1->0,1"}, 
-				"RIGHT_TRIGGER" : {"range":"-1,1->0,1"}
 		}
 	},
 	"xbox":{

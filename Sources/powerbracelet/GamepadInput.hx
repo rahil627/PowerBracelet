@@ -12,6 +12,7 @@ class GamepadInput {
 
 	public function new(){
 			controllers = new Map<Int, GamepadHandler>();
+			addProfile("generic");
 	}
 
 	public function getButtonName(b:ButtonInput, controller:Int = 0){
@@ -80,14 +81,19 @@ class GamepadInput {
 
 	function getProfile(id:String) : Profile{
 
+		var p:Profile = null; // fallback
+
 		for(profile in profiles)
 			for(guid in profile.guids){
+
+				if(guid == "generic") p = profile;
+
 				if(guid.indexOf(id) > -1 || id.toLowerCase().indexOf(guid) > -1 ) {
 					return profile;
 				}
 			}
 
-		return null;
+		return 	p;
 	}
 
 	var  profilesloaded = false;
