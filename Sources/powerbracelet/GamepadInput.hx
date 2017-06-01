@@ -78,6 +78,39 @@ class GamepadInput {
 		
 	}
 
+	// public function addAllProfiles(){
+	// 		if(!profilesloaded){
+	// 				getProfileData(addAllProfiles);
+	// 				return;
+	// 		}
+
+
+	// }
+
+	// function getProfileData(cb:void->void): Bool{
+	// 	if(!Reflect.hasField(kha.Assets.blobs, "gamepadprofiles_json")){
+	// 			trace("gamepadprofiles.json missing from assets.\n make sure the asset folder is known in khafile.js");
+	// 			profilesloaded = false;
+	// 	}
+	// 	else{
+	// 		var b:kha.Blob =  cast Reflect.field(kha.Assets.blobs, "gamepadprofiles_json");
+
+	// 		profilesloaded = false;
+
+	// 		if(b == null){
+				
+	// 			kha.Assets.loadBlob("gamepadprofiles_json", function(b:kha.Blob){
+	// 				profilesloaded = true;
+	// 				cb();
+	// 			});
+
+	// 		}
+	// 		else {
+	// 			profilesloaded = true;
+
+	// 		}
+	// }
+
 
 	function getProfile(id:String) : Profile{
 
@@ -400,13 +433,12 @@ class GamepadHandler{
 		//if(Math.abs(value) > 0.9)
 		//
 		//if(ax != 3 && ax != 4 && ax != 9 && ax != 5 && ax != 1 && ax != 2)trace('axis : $ax, Value :$value');
-		
 		axis[ax] = value;
 	}
 	
 	public function onGamepadButton(button:Int, value:Float) : Void {
 	
-		trace('Button : $button, Value :$value');
+		//trace('Button : $button, Value :$value');
 		if(value > 0.5)buttons.set(button,Pressed);
 		else buttons.set(button,Released);
 
@@ -429,6 +461,7 @@ enum ButtonInput{
 
 	SELECT_BUTTON;
 	START_BUTTON;
+	SHARE_BUTTON;
 	LEFT_ANALOGUE_BUTTON;
 	RIGHT_ANALOGUE_BUTTON;
 

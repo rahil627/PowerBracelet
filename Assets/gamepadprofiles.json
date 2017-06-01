@@ -5,36 +5,37 @@
 		],
 		"mapping": {
 			"buttons":{
-				"WEST_BUTTON"			: {"■":0},
-				"SOUTH_BUTTON"			: {"X":1},
+				"SOUTH_BUTTON"			: {"X":0},
+				"EAST_BUTTON"			: {"●":1},
+				"WEST_BUTTON"			: {"■":2},
 				"NORTH_BUTTON"			: {"▲":3},
-				"EAST_BUTTON"			: {"●":2},
 
-				"LB_BUTTON"				: {"L1":6},
-				"RB_BUTTON"				: {"R1":7},
+				"LB_BUTTON"				: {"L1":4},
+				"RB_BUTTON"				: {"R1":5},
 
-				"LB_2_BUTTON"			: {"L2":4},
-				"RB_2_BUTTON"			: {"R2":5},
+				"LB_2_BUTTON"			: {"L2":6},
+				"RB_2_BUTTON"			: {"R2":7},
 
-				"SELECT_BUTTON"			: {"OPTION":8},
-				"START_BUTTON"			: {"TOUCH_CLICK":9},
+				"SELECT_BUTTON"			: {"OPTION":9},
+				"SHARE_BUTTON"			: {"SHARE":89},
+				"START_BUTTON"			: {"TOUCH_CLICK":17},
 				"LEFT_ANALOGUE_BUTTON"	: {"LEFT_ANALOGUE_BUTTON":10},
 				"RIGHT_ANALOGUE_BUTTON"	: {"RIGHT_ANALOGUE_BUTTON":11},
 
-				"HOME_BUTTON"			: {"PS_BUTTON":12},
+				"HOME_BUTTON"			: {"PS_BUTTON":16},
 
-				"DPAD_UP"				: {"DPAD_UP":9},
-				"DPAD_DOWN"				: {"DPAD_DOWN":8},
-				"DPAD_LEFT"				: {"DPAD_LEFT":15},
+				"DPAD_UP"				: {"DPAD_UP":12},
+				"DPAD_DOWN"				: {"DPAD_DOWN":13},
+				"DPAD_LEFT"				: {"DPAD_LEFT":14},
 				"DPAD_RIGHT"			: {"DPAD_RIGHT":15}
 			},
 			"axis":{
 				"LEFT_ANALOGUE_X"		: {"LEFT_ANALOGUE_X":0},
 				"LEFT_ANALOGUE_Y"		: {"LEFT_ANALOGUE_Y":1},
 				"RIGHT_ANALOGUE_X"		: {"RIGHT_ANALOGUE_X":2},
-				"RIGHT_ANALOGUE_Y"		: {"RIGHT_ANALOGUE_Y":5},
-				"LEFT_TRIGGER"			: {"LEFT_TRIGGER":3},
-				"RIGHT_TRIGGER"			: {"RIGHT_TRIGGER":4}
+				"RIGHT_ANALOGUE_Y"		: {"RIGHT_ANALOGUE_Y":3},
+				"LEFT_TRIGGER"			: {"LEFT_TRIGGER":4},
+				"RIGHT_TRIGGER"			: {"RIGHT_TRIGGER":5}
 			}
 		}
 	},
@@ -44,19 +45,19 @@
 		],
 		"mapping": {
 			"buttons":{
-				"WEST_BUTTON"			: {"X":0} ,
-				"SOUTH_BUTTON"			: {"A":1},
-				"NORTH_BUTTON"			: {"Y":2} ,
+				"SOUTH_BUTTON"			: {"A":0},
+				"NORTH_BUTTON"			: {"Y":1},
+				"WEST_BUTTON"			: {"X":2},
 				"EAST_BUTTON"			: {"B":3},
 
-				"LB_BUTTON"				: {"L1":6} ,
-				"RB_BUTTON"				: {"R1":7} ,
+				"LB_BUTTON"				: {"L1":4} ,
+				"RB_BUTTON"				: {"R1":5} ,
 
-				"LB_2_BUTTON"			: {"R2":4} ,
-				"RB_2_BUTTON"			: {"R2":5} ,
+				"LB_2_BUTTON"			: {"R2":6} ,
+				"RB_2_BUTTON"			: {"R2":7} ,
 
-				"SELECT_BUTTON"			: {"Back":9} ,
-				"START_BUTTON"			: {"Start":8} ,
+				"SELECT_BUTTON"			: {"Back":8} ,
+				"START_BUTTON"			: {"Start":9} ,
 				"LEFT_ANALOGUE_BUTTON"	: {"LEFT_ANALOGUE_BUTTON":10} ,
 				"RIGHT_ANALOGUE_BUTTON"	: {"RIGHT_ANALOGUE_BUTTON":11} ,
 
@@ -83,19 +84,19 @@
 		],
 		"mapping": {
 			"buttons":{
-				"WEST_BUTTON"			: {"X":0} ,
-				"SOUTH_BUTTON"			: {"A":1},
-				"NORTH_BUTTON"			: {"Y":2} ,
+				"SOUTH_BUTTON"			: {"A":0},
+				"NORTH_BUTTON"			: {"Y":1},
+				"WEST_BUTTON"			: {"X":2},
 				"EAST_BUTTON"			: {"B":3},
 
-				"LB_BUTTON"				: {"L1":6} ,
-				"RB_BUTTON"				: {"R1":7} ,
+				"LB_BUTTON"				: {"L1":4} ,
+				"RB_BUTTON"				: {"R1":5} ,
 
-				"LB_2_BUTTON"			: {"R2":4} ,
-				"RB_2_BUTTON"			: {"R2":5} ,
+				"LB_2_BUTTON"			: {"R2":6} ,
+				"RB_2_BUTTON"			: {"R2":7} ,
 
-				"SELECT_BUTTON"			: {"Back":9} ,
-				"START_BUTTON"			: {"Start":8} ,
+				"SELECT_BUTTON"			: {"Back":8} ,
+				"START_BUTTON"			: {"Start":9} ,
 				"LEFT_ANALOGUE_BUTTON"	: {"LEFT_ANALOGUE_BUTTON":10} ,
 				"RIGHT_ANALOGUE_BUTTON"	: {"RIGHT_ANALOGUE_BUTTON":11} ,
 
