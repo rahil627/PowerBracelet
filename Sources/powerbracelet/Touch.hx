@@ -44,6 +44,4 @@ class Touch{
 
 	@:allow(powerbracelet.TouchInput)
 	var prev:Vector2i = new Vector2i();
-
- 
 }

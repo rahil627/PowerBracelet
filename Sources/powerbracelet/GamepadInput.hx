@@ -3,24 +3,21 @@ package powerbracelet;
 import powerbracelet.ButtonState;
 import haxe.Json;
 
-
 class GamepadInput {
-
-   var controllers:Map<Int, GamepadHandler>;
-
-   var profiles:Array<Profile> = new Array<Profile>();
-
+	var controllers:Map<Int, GamepadHandler>;
+  var profiles:Array<Profile> = new Array<Profile>();
+	
 	public function new(){
-			controllers = new Map<Int, GamepadHandler>();
-			addProfile("generic");
+		controllers = new Map<Int, GamepadHandler>();
+		addProfile("generic");
 	}
 
 	public function getButtonName(b:ButtonInput, controller:Int = 0){
-			return controllers.exists(controller) ? controllers[controller].getButtonName(b) : "Controller not set!";
+		return controllers.exists(controller) ? controllers[controller].getButtonName(b) : "Controller not set!";
 	}
 
 	public function getAxisName(a:AxisInput, controller:Int = 0){
-			return controllers.exists(controller) ? controllers[controller].getAxisName(a) : "Controller not set!";
+		return controllers.exists(controller) ? controllers[controller].getAxisName(a) : "Controller not set!";
 	}
 
 	public function checkRaw(button:Int, state:ButtonState, controller:Int = 0) : Bool{
@@ -48,14 +45,14 @@ class GamepadInput {
 	 * Returns the axis value (from 0 to 1)
 	 * @param  a The axis index to retrieve starting at 0
 	 */
-	public inline function axis(a:AxisInput,controller:Int = 0) : Float{
+	public inline function axis(a:AxisInput, controller:Int = 0) : Float{
 		return controllers.exists(controller) ? controllers[controller].axisValue(a) : 0.0; 
 	}
 	//-----------------------------------------------------------------------	
 
 	public function addController(id:Int){
 		if(!controllers.exists(id))
-		controllers[id] = new GamepadHandler(id);
+			controllers[id] = new GamepadHandler(id);
 		controllers[id].profile = getProfile(controllers[id].getHardwareID());
 	}
 
@@ -75,7 +72,6 @@ class GamepadInput {
 	public function getFriendlyName(id:Int){
 		if(!controllers.exists(id)) return;
 		controllers[id].getFriendlyName();
-		
 	}
 
 	// public function addAllProfiles(){
