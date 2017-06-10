@@ -26,13 +26,14 @@ function get_multiTouchSupported() : Bool{
 	 touches[id].prev.y = y;	 
 	 touches[id].setID(id); 
 	 touches[id].setPressedState(true);
-
  }
+
  function onTouchEnd(id:Int, x:Int, y:Int){
 	  touches[id].updatePosition(x,y);
 	  touches[id].setPressedState(false);
 	  touches[id] = null;
  }
+
  function onMoveListener(id:Int, x:Int, y:Int){
 	 touches[id].updatePosition(x,y);
  }
@@ -55,5 +56,4 @@ function get_multiTouchSupported() : Bool{
  public function GetTouch(id:Int) : Touch{
 	 return touches[id];
  }
-
 }

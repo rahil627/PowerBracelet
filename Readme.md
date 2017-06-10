@@ -16,9 +16,9 @@ Each can be accessed with the **powerbracelet.Input** class
 
 Example:
 
-    if(Input.keyboard.isDown(Key.S)){
-        trace( "S" is down);
-    }
+    if (Input.keyboard.isDown(KeyCode.B)){
+			trace('PRESSING THE 'B' KEY');
+		}
 
 
 Make sure the update function **powerbracelet.Input.update** is called in your update loop.
@@ -73,7 +73,6 @@ A GamePad controller :
     import powerbracelet.VirtualAxis;
     import powerbracelet.ButtonState;
     import powerbracelet.Input;
-    import powerbracelet.Key;
 
     //Create a new Virtual button
     var vButton:VirtualButton;

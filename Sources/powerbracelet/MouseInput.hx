@@ -26,7 +26,6 @@ class MouseInput {
  /** Whether any button is down this frame*/
  public var buttonPressed(default, null) : Bool = false;
  
-
  var buttons:Map<Int, ButtonState>;
 
 	public function new(){
