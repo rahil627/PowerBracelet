@@ -4,8 +4,10 @@ import kha.input.Keyboard;
 class KeyboardInput {
    public var timeout:Float;
 
+   //@TODO -> Perhaps use vectors instead
    var keyMap:Map<Int, Bool>;
    var pressedMap:Map<Int, Bool>;
+   var releasedMap:Map<Int, Bool>;
    var lastKey:Int = -1;
    var keyCount:Int = 0;
 
@@ -14,6 +16,7 @@ class KeyboardInput {
 
 	   keyMap = new Map<Int, Bool>();
 	   pressedMap = new Map<Int, Bool>();
+	   releasedMap = new Map<Int, Bool>();
    }
 
    function onKeyDown(keyCode:Int){
@@ -31,6 +34,7 @@ class KeyboardInput {
 			keyCount++;
 			//_press[_pressNum++] = code;
    		}
+		pressedMap[keyCode] = true;
    }
 
    function onUpKey(keyCode:Int){
@@ -44,13 +48,20 @@ class KeyboardInput {
 		if (keyMap[code]){
 			keyMap[code] = false;
 			keyCount--;
-			//_release[_releaseNum++] = code;
 		}
+
+		releasedMap[keyCode] = true;
+		
    }
 
    @:allow(powerbracelet.Input)
    function update(){
-
+	   for(value in pressedMap){
+		   value = false;
+	   }
+	   for(value in releasedMap){
+		   value = false;
+	   }
    }
 
    public function isDown(key:Int):Bool {
@@ -63,5 +74,9 @@ class KeyboardInput {
 
    public function pressed(key:Int):Bool {
 	   	return pressedMap[key];
+   }
+
+    public function released(key:Int):Bool {
+	   	return releasedMap[key];
    }
 }
