@@ -161,7 +161,7 @@ class GamepadInput {
 
 
 			var guids:Array<String> = profile.guid;
-			var transform = profile.transform;
+			//var transform = profile.transform;
 			var buttons = profile.mapping.buttons;
 			var axis = profile.mapping.axis;
 
@@ -178,7 +178,7 @@ class GamepadInput {
 				b.name = Reflect.fields(bs)[0];
 				b.id = Reflect.field(bs,b.name);
 
-				if(transform != null && Reflect.hasField(transform, map)){
+				/*if(transform != null && Reflect.hasField(transform, map)){
 					var t = Reflect.field(transform, map);
 					var tn = Reflect.fields(t)[0];
 					switch(tn){
@@ -186,7 +186,7 @@ class GamepadInput {
 						b.isAxis = true;
 						b.sign = Reflect.field(t,tn) == "-" ? -1:1;
 					}
-				}
+				}*/
 	
 			}
 
@@ -201,7 +201,7 @@ class GamepadInput {
 				a.name = Reflect.fields(bs)[0];
 				a.id = Reflect.field(bs,a.name);
 
-				if(transform != null && Reflect.hasField(transform, axmap)){
+				/*if(transform != null && Reflect.hasField(transform, axmap)){
 					var t = Reflect.field(transform, axmap);
 					var tn = Reflect.fields(t)[0];
 
@@ -218,7 +218,7 @@ class GamepadInput {
 						a.maxTo = Std.parseInt(splitRight[1]);
 						a.normalize = true;
 					}
-				}			
+				}*/	
 			}
 		}
 
@@ -346,23 +346,19 @@ class GamepadHandler{
 		return axis.exists(a) ? (Math.abs(axis[a]) >= deadzone ? axis[a]:0):0; // @TODO Normalize deadzone
 	}
 	
-	var buttID:Int = 0;
+
 	var butt:Button;
-	var buttAxis:Float = 0;
+
 	public function check(button:ButtonInput, state:ButtonState) : Bool{
 		if(profile != null && profile.buttonMapping.exists(button)){
-
 			 butt = profile.buttonMapping[button];
-			 buttID = butt.id;
-			 if(butt.isAxis){
-
-
+			 /*if(butt.isAxis){
 				 buttAxis = axisValueRaw(buttID);
 				 if(butt.sign < 0 && buttAxis < 0) return true;
 				 else if(butt.sign > 0 && buttAxis > 0) return true;
 				 else return false;
-			 }
-			 return buttons.exists(buttID) && buttons[buttID] == state;
+			 }*/
+			 return buttons.exists(butt.id) && buttons[butt.id] == state;
 		}
 		return false;
 	}
@@ -371,8 +367,8 @@ class GamepadHandler{
 
 		if(profile != null && profile.buttonMapping.exists(button)){
 			 
-			 buttID = profile.buttonMapping[button].id;
-			 return pressures.exists(buttID) ? pressures[buttID]:0;
+			 butt = profile.buttonMapping[button];
+			 return pressures.exists(butt.id) ? pressures[butt.id]:0;
 		}
 		return 0;
 	}
@@ -387,16 +383,15 @@ class GamepadHandler{
 	var norm:Float = 0;
 	public inline function axisValue(a:AxisInput):Float
 	{
-		//trace(profile == null);
 		if(profile != null && profile.axisMapping.exists(a)){
 			axID = profile.axisMapping[a].id;
 			ax = profile.axisMapping[a];
 
 			axValue = axis.exists(axID) ? (Math.abs(axis[axID]) >= deadzone ? axis[axID]:0):0;
-			if(ax.normalize){
+			/*if(ax.normalize){
 				norm =  normalize(axValue, ax.min, ax.max);			// Oh there goes gravity
 				axValue =  (1-norm) * ax.minTo  + norm * ax.maxTo; //lerp back to reality
-			}
+			}*/
 			return axValue; // @TODO Normalize deadzone
 		}
 
@@ -490,21 +485,21 @@ class Button{
 	/*
 	/ If this button is transformed as axis
 	*/
-	public var isAxis:Bool;
+	//public var isAxis:Bool;
 	public var name:String;
 	public var id:Int;
-	public var sign:Int = 0;
+	//public var sign:Int = 0;
 
 	function new(){}
 }
 
 class Axis{
 	public var id:Int = 0;
-	public var min:Float = -1.0;
-	public var max:Float = 1.0;
-	public var minTo:Float = 0;
-	public var maxTo:Float = 0;
-	public var normalize:Bool = false;
+	//public var min:Float = -1.0;
+	//public var max:Float = 1.0;
+	//public var minTo:Float = 0;
+	//public var maxTo:Float = 0;
+	//public var normalize:Bool = false;
 	public var name:String;	
 
 	function new(){}
