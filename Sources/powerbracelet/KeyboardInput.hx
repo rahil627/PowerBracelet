@@ -1,13 +1,13 @@
 package powerbracelet;
 import kha.input.Keyboard;
+import haxe.ds.Vector;
 
 class KeyboardInput {
    public var timeout:Float;
 
-   //@TODO -> Perhaps use vectors instead
    var keyMap:Map<Int, Bool>;
-   var pressedMap:Map<Int, Bool>;
-   var releasedMap:Map<Int, Bool>;
+   var pressedMap:Vector<Bool>;
+   var releasedMap:Vector<Bool>;
    var lastKey:Int = -1;
    var keyCount:Int = 0;
 
@@ -15,8 +15,8 @@ class KeyboardInput {
 		 Keyboard.get(0).notify(onKeyDown,onUpKey);
 
 	   keyMap = new Map<Int, Bool>();
-	   pressedMap = new Map<Int, Bool>();
-	   releasedMap = new Map<Int, Bool>();
+	   pressedMap = new Vector<Bool>(255);
+	   releasedMap = new Vector<Bool>(255);
    }
 
    function onKeyDown(keyCode:Int){
@@ -56,11 +56,11 @@ class KeyboardInput {
 
    @:allow(powerbracelet.Input)
    function update(){
-	   for(value in pressedMap){
-		   value = false;
+	   for(i in 0...pressedMap.length){
+		   pressedMap[i] = false;
 	   }
-	   for(value in releasedMap){
-		   value = false;
+	   for(i in 0...releasedMap.length){
+		   releasedMap[i] = false;
 	   }
    }
 
