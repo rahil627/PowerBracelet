@@ -28,18 +28,22 @@ class Touch{
 
 	@:allow(powerbracelet.TouchInput)
 	function updatePosition(x:Int, y:Int){
-		prev.x = position.x;
-		prev.y = position.y;
+		prev.x = rawPosition.x;
+		prev.y = rawPosition.y;
 
-		position.x = x;
-		position.y = y;
+		rawPosition.x = x;
+		rawPosition.y = y;
+
+		position.x = kha.Scaler.transformXDirectly(x,y, powerbracelet.MouseInput.bufferWidth,powerbracelet.MouseInput.bufferHeight, kha.ScreenCanvas.the.width,kha.ScreenCanvas.the.height, kha.System.screenRotation);
+		position.y = kha.Scaler.transformYDirectly(x,y, powerbracelet.MouseInput.bufferWidth,powerbracelet.MouseInput.bufferHeight, kha.ScreenCanvas.the.width,kha.ScreenCanvas.the.height,kha.System.screenRotation);
 	}
 
 	public var position(default, null):Vector2i = new Vector2i(0,0);
+	public var rawPosition(default, null):Vector2i = new Vector2i(0,0);
 	public var delta(get, null):Vector2i = new Vector2i(0,0);
 	
 	function get_delta() : Vector2i{
-		return position.sub(prev);
+		return rawPosition.sub(prev);
 	}
 
 	@:allow(powerbracelet.TouchInput)

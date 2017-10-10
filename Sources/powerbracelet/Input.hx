@@ -23,14 +23,14 @@ class Input {
 	}
 	//_____________________________________________________
 	// Touch
-	public static var touch(get,null):TouchInput;
+	/*public static var touch(get,null):TouchInput;
 
 	static function get_touch():TouchInput {
 		if(touch == null){
 			touch = new TouchInput();
 		}
 		return touch;
-	}
+	}*/
 
 	//_____________________________________________________
 	// Sensor
@@ -59,6 +59,6 @@ class Input {
 		if(keyboard != null) keyboard.update();
 		if(mouse != null) mouse.update();
 		if(gamepad != null) gamepad.update();
-		if(touch != null) touch.update(dt);
+		//if(touch != null) touch.update(dt);
 	} 
 }

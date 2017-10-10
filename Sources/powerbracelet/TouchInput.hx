@@ -20,12 +20,19 @@ function get_multiTouchSupported() : Bool{
 
  function onTouchStart(id:Int, x:Int, y:Int){
 	 touches[id] = new Touch();
-	 touches[id].position.x = x;
-	 touches[id].position.y = y;
-	 touches[id].prev.x = x;
-	 touches[id].prev.y = y;	 
-	 touches[id].setID(id); 
-	 touches[id].setPressedState(true);
+	 touches[id].rawPosition.x = x;
+	 touches[id].rawPosition.y = y;
+
+	 touches[id].rawPosition.x = x;
+	 touches[id].rawPosition.y = y;
+
+	touches[id].position.x = kha.Scaler.transformXDirectly(x,y, powerbracelet.MouseInput.bufferWidth,powerbracelet.MouseInput.bufferHeight, kha.ScreenCanvas.the.width,kha.ScreenCanvas.the.height, kha.System.screenRotation);
+	touches[id].position.y = kha.Scaler.transformYDirectly(x,y, powerbracelet.MouseInput.bufferWidth,powerbracelet.MouseInput.bufferHeight, kha.ScreenCanvas.the.width,kha.ScreenCanvas.the.height,kha.System.screenRotation);
+	
+	touches[id].prev.x = x;
+	touches[id].prev.y = y;	 
+	touches[id].setID(id); 
+	touches[id].setPressedState(true);
  }
 
  function onTouchEnd(id:Int, x:Int, y:Int){

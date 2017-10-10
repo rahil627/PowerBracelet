@@ -12,7 +12,7 @@ class KeyboardInput {
    var keyCount:Int = 0;
 
    public function new(){
-		 Keyboard.get(0).notify(onKeyDown,onUpKey);
+		Keyboard.get(0).notify(onKeyDown,onUpKey);
 
 	   keyMap = new Map<Int, Bool>();
 	   pressedMap = new Vector<Bool>(255);

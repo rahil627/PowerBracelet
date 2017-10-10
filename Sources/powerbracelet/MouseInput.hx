@@ -7,6 +7,10 @@ class MouseInput {
  public var x(default, null) : Int  = 0;
  /** The y position of the mouse on screen*/
  public var y(default, null) : Int = 0;
+ /** The x position of the mouse on screen*/
+ public var rawX(default, null) : Int  = 0;
+ /** The y position of the mouse on screen*/
+ public var rawY(default, null) : Int = 0;
  /** The x delta of the mouse*/
  public var deltaX(default, null) : Int = 0;
  /** The y delta of the mouse*/
@@ -26,6 +30,9 @@ class MouseInput {
  /** Whether any button is down this frame*/
  public var buttonPressed(default, null) : Bool = false;
  
+ public static var bufferWidth:Int = 0;
+ public static var bufferHeight:Int = 0;
+
  var buttons:Map<Int, ButtonState>;
 
 	public function new(){
@@ -47,8 +54,11 @@ class MouseInput {
 			buttonDown = false;
 	 }
 	 function  onMouseMove(x:Int, y:Int, dx:Int, dy:Int){
-		 this.x = x;
-		 this.y = y;
+		 rawX = x;
+		 rawY = y;
+		 
+		 updateScaled();
+
 		 deltaX = dx;
 		 deltaY = dy;
 	 }
@@ -79,6 +89,11 @@ class MouseInput {
 		deltaY = 0;
 	 }
 
+	function updateScaled(){
+		 x = kha.Scaler.transformXDirectly(rawX,rawY, bufferWidth,bufferHeight, kha.ScreenCanvas.the.width,kha.ScreenCanvas.the.height, kha.System.screenRotation);
+		 y = kha.Scaler.transformYDirectly(rawX,rawY,bufferWidth,bufferHeight, kha.ScreenCanvas.the.width,kha.ScreenCanvas.the.height,kha.System.screenRotation);
+	 }
+
 	 @:allow(powerbracelet.TouchInput)
 	 function setLMB(state:ButtonState){
 			buttons.set(0,state);
@@ -86,8 +101,9 @@ class MouseInput {
 
 	  @:allow(powerbracelet.TouchInput)
 	 function setMouseCoord(x:Int,y:Int){
-			this.x = x;
-			this.y = y;
+			rawX = x;
+			rawY = y;
+			updateScaled();
 	 }
 
 	   @:allow(powerbracelet.TouchInput)
