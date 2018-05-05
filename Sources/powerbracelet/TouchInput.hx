@@ -15,16 +15,16 @@ function get_multiTouchSupported() : Bool{
 
  public function new(){
 	 if(multiTouchSupported)
-	 Surface.get(0).notify(onTouchStart,onTouchEnd,onMoveListener);
+	 Surface.get(0).notify(onTouchStart,onTouchEnd,onMove);
  }
 
  function onTouchStart(id:Int, x:Int, y:Int){
-	 touches[id] = new Touch();
-	 touches[id].rawPosition.x = x;
-	 touches[id].rawPosition.y = y;
+	touches[id] = new Touch();
+	touches[id].rawPosition.x = x;
+	touches[id].rawPosition.y = y;
 
-	 touches[id].rawPosition.x = x;
-	 touches[id].rawPosition.y = y;
+	touches[id].rawPosition.x = x;
+	touches[id].rawPosition.y = y;
 
 	touches[id].position.x = kha.Scaler.transformXDirectly(x,y, powerbracelet.MouseInput.bufferWidth,powerbracelet.MouseInput.bufferHeight, kha.ScreenCanvas.the.width,kha.ScreenCanvas.the.height, kha.System.screenRotation);
 	touches[id].position.y = kha.Scaler.transformYDirectly(x,y, powerbracelet.MouseInput.bufferWidth,powerbracelet.MouseInput.bufferHeight, kha.ScreenCanvas.the.width,kha.ScreenCanvas.the.height,kha.System.screenRotation);
@@ -41,7 +41,7 @@ function get_multiTouchSupported() : Bool{
 	  touches[id] = null;
  }
 
- function onMoveListener(id:Int, x:Int, y:Int){
+ function onMove(id:Int, x:Int, y:Int){
 	 touches[id].updatePosition(x,y);
  }
 

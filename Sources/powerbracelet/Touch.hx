@@ -18,7 +18,7 @@ class Touch{
 	function setPressedState(v:Bool){
 		pressed = v;
 	}
-	public var time(default, null):Float;
+	public var time(default, null):Float = 0.0;
 
 	@:allow(powerbracelet.TouchInput)	
 	function update(delta:Float){
